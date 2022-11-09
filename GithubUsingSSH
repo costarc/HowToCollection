@@ -1,0 +1,8 @@
+Follow the basic steps found here:  https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+
+To Clone an existing repository:
+1. Select the Repository in Github (click on it)
+2. Click in "Code"
+3. In the "Local" panel that will open, make sure you click "SSH"
+4. Click the "Copy" icon (or copy using control+c) to copy the url, which should be similar to "git@github.com:costarc/<repository name>.git"
+5. From your work station, type "git clone git@github.com:costarc/<repository name>.git"
