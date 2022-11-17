@@ -1,0 +1,62 @@
+MH-Tiny
+
+This device is sold on ebay with some ambiguous description. They say it is compatible with Arduino nano, which os not true - it's not possible to program this device using the Arduino Nano setup.
+The pinout is also different, by the way.
+
+This device needs a different device driver, which once installed will not create a COM port - but programming will still work if setup correctly.
+
+In my tests, I could program it using Arduino IDE under Windows, but not under Mac OS X due to lack of device drivers.
+
+To setup Arduino IDE on Windows for this device:
+
+1. Install the Windows drivers. Download from Github: https://github.com/MHEtLive/MHEtLiveArduino/releases/download/1.0.0/2.0a4.rar
+
+2. File -> Preferences -> Additional Boards Manager URLs:
+  https://raw.githubusercontent.com/MHEtLive/arduino-boards-index/master/package_mhetlive_index.json
+  
+3. Add the MH-Tiny device to the list of supported devices in the Arduino IDE
+   -> Tools -> Board -> Boards Manager ...
+   -> Search for "MH-ET LIVE boards" and install it
+   
+Once installed, the device can be programmed from Arduino IDE.
+
+The following code is the exmaple Blink clode modified to blink leds in all pins of the device. The purpose is to test the device and assure all pins are working.
+
+-- code --
+void setup()
+{
+  for (int i=0; i<26; i++)
+    pinMode(i,OUTPUT);
+}
+
+void loop()
+{
+  for (int i=0; i<26; i++) {
+    digitalWrite(i,HIGH);
+  }
+  delay(1000);
+  for (int i=0; i<26; i++) {
+    digitalWrite(i,LOW);
+  }
+  delay(1000);
+}
+-- code --
+
+To run this program:
+
+1. Create a new sketch and paste the code
+2. Select other board and type, and search and select the following board:
+   MH-ET LIVE Tiny88(16.0MHz)
+3. Upload the sketch
+   Connect the Tiny to the USB cable/computer
+   Push Reset in the Tiny
+   
+ At this point, the Tiny should be programmed with the code.
+ 
+ Use one single led to test if it's working:
+    - Connect negative leg (cathode) to GND in the Tiny
+    - Connect positive leg (Anode) to pin one pin in the Tiny
+    - wait just enough to see that the led will blink
+    - Move the positive leg to the next pin in the Tiny
+    - Verify that all 25 pins will blink the led
+    
