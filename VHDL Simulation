@@ -1,19 +1,29 @@
 GHDL
 
-GHDL is the tool to use, either in Windows, Mac or Linux: https://github.com/ghdl/ghdl/releases
-There are binaries for all platforms in this github page.
+GHDL is the tool to use, either in Windows, Mac or Linux: 
 
-GTKWave should be used to display the graphical output for the simulatios: https://gtkwave.sourceforge.net/
-Can be installed as binary or compilied.
-Dependencies for compilation:
-TCL
-TK
-GCC++
-GPerf
-lzma-devel
-libgtk2
+1. download and install GHDL and GTKWave
+These tools should be uncomoressed and copied to a location of your choice.
 
-Using
+GHDL: https://github.com/ghdl/ghdl/releases
+GTKWave: https://sourceforge.net/projects/gtkwave/files/
 
+
+2. Adde the bin directory fir each of thesse tools to the Windows environment
+<GHDL Install Dir>/bin
+<GTKWave Install dir>/bin
+
+3. Create a test bech for you design, for example:
+Design file name: test.vhd
+Entity name: test
+Test bench file name: test_tb.vhd
+Test bench entity name: test_tb
+
+4. Create a bat file to simulate and generate the wave forms. for the example files in step 3 above, the bat file is:
+ghdl -a test.vhd
+ghdl -a test_tb.vhd
+ghdl -e test_tb
+ghdl -r test_tb --stop-time=200ps --vcd=test_tb.vcd
+gtkwave test_tb.vcd
 
 
