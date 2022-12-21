@@ -1,0 +1,19 @@
+GHDL
+
+GHDL is the tool to use, either in Windows, Mac or Linux: https://github.com/ghdl/ghdl/releases
+There are binaries for all platforms in this github page.
+
+GTKWave should be used to display the graphical output for the simulatios: https://gtkwave.sourceforge.net/
+Can be installed as binary or compilied.
+Dependencies for compilation:
+TCL
+TK
+GCC++
+GPerf
+lzma-devel
+libgtk2
+
+Using
+
+
+
