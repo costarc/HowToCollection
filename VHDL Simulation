@@ -26,4 +26,11 @@ ghdl -e test_tb
 ghdl -r test_tb --stop-time=200ps --vcd=test_tb.vcd
 gtkwave test_tb.vcd
 
+5. Load your simulation into GTKWave with favorite signals
+Setup the signals in GTKWave then save (for example, test_tb.gtkw) for quick load:
+ghdl -a test.vhd
+ghdl -a test_tb.vhd
+ghdl -e test_tb
+ghdl -r test_tb --stop-time=200ps --vcd=test_tb.vcd
+gtkwave -a test_tb.gtkw test_tb.vcd
 
