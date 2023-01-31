@@ -1,0 +1,17 @@
+Using default Pin Assigments will get you in troube when trying to use the SD Card.
+
+Happens that one of the pins assigned to SD_DAT is shared with another functoin in the DE1, which will cause the error:
+
+
+go to assignments, device, device&pin settings , dual purpose pins... change the nCEO to be a regular I/O pin.. 
+
+  Error (176310): Can't place multiple pins assigned to pin location Pin_W20 (IOC_X50_Y2_N1)
+	Info (176311): Pin SD_DAT is assigned to pin location Pin_W20 (IOC_X50_Y2_N1)
+
+To work around this, cahnge a settings using the Quartus IDE:
+
+Assignments -> Device -> Device and Pin Options... -> Dual Purpose Pins
+
+Change nCEO from "Use as programming pin" to "Use as regular I/O"
+
+Compile the project and it should now be sucesfull.
