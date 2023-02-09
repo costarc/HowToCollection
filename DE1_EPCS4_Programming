@@ -4,12 +4,12 @@ Make sure Run/Prog is in RUN
 
 1.open File > Convert Programming Files 
 2.select .jic (JTAG indirect) as the output type 
-3.select appropriate EPCS device 
+3.select appropriate EPCS device (EPCS4)
 4.click SOF data, then Add File to add your .sof 
 5.click properties to optionally enable compression 
-6.click Flash Loader then Add Device to select your target device 
-7.click Generate 
-8.open Tools > QII Programmer 
+6.click Flash Loader then Add Device to select your target device  (Cyclone II, EP2C20)
+7.click Generate, then close the Window.
+8.open Tools > Programmer 
 9.click Auto Detect 
 10.double click in File column of your FPGA device row 
 11.select .jic file 
