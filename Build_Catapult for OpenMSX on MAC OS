@@ -1,0 +1,14 @@
+# Build opemMSX Catapult in Mac OS X
+
+1. Download Catapult source code from https://openmsx.org/ and uncompress to a directory.
+
+2. Download wxWidgets from https://wxwidgets.org/downloads/ and uncompress to a directory.
+
+3. From the wxWidgets direcotry, compile the sources:
+mkdir macos
+cd macos
+../configure
+sudo make install
+
+4. From openMSX source directory, compile the sorces:
+./sudo make install
