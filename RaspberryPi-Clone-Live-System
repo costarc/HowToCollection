@@ -21,7 +21,7 @@ Added space for incremental updates after shrinking (MB) [0]? 100
 Create /media/fat32/raspbian_lite.img (y/n)?
 
 5. unmount the SD Card:
-sudo unmount /media/fat32
+sudo umount /media/fat32
 
 6. Use Raspberry Pi Imager to write this image to a new SD Card
 Download from Raspberry Pi official repository: https://www.raspberrypi.com/software/
