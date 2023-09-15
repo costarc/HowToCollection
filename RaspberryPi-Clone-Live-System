@@ -1,0 +1,30 @@
+Clone a live Linux & Raspberry Pi filesystem to a disk image, in a proper format that can be used to write back to another SD Card.
+
+This instructions uses image-utils scripts (downloaded from somewhere and cannot find the address - will update if I do)
+
+1. Plug a big SD card to the device - must be FAT32 formatted and big enough to store the Linux/Raspberry Pi (device)  disk image
+
+2. Identify the SD Card device number: 
+sudo fdisk -l
+Device     Boot Start       End   Sectors   Size Id Type
+/dev/sda1       32768 249737215 249704448 119.1G  b W95 FAT32
+
+3. Mount the SD Card:
+sudo mkdir /media/fat32
+sudo mount /dev/sda1 /media/fat32
+
+4. Run image-backup to create the disk image:
+sudo ./image-backup
+Image file to create? /media/fat32/raspbian_lite.img
+Initial image file ROOT filesystem size (MB) [3155]? 
+Added space for incremental updates after shrinking (MB) [0]? 100
+Create /media/fat32/raspbian_lite.img (y/n)?
+
+5. unmount the SD Card:
+sudo unmount /media/fat32
+
+6. Use Raspberry Pi Imager to write this image to a new SD Card
+Download from Raspberry Pi official repository: https://www.raspberrypi.com/software/
+Follow the instructions starting in Step 2 here: https://github.com/costarc/MSXPi#prepare-raspberry-pi-using-msxpi-sdcard-image
+
+                                          
