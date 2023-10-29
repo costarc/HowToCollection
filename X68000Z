@@ -1,11 +1,20 @@
 Notes:
+------
  1. To download the required packages for the updates described in this guide, you must first register the X68000Z in https://dev.zuiki.com/project-z/community  
   (My page -> Product Registration)
  2. The SCSI configuratioin procedure requires you to navigate the SXWindow graphical user interface. I did it using the X68000Z mouse, and have not even tested if it will work with any USB mouse. I guess if you do not have the X68000Z mouse you have nothign to loose testing with amny USB mouse, right ?
 
-Procedure
+Procedures in this Guide
+------------------------
+1. Firmaware Update to 1.4
+2. Using a HDD Disk Image
+3. Using multiple HDD disk images
+
+Guides
+======
 
 1. Firmaware Update to 1.4
+--------------------------
 
 What you need:
  - 1 x SDHC SDCARD format as FAT32
@@ -28,6 +37,7 @@ Steps:
 - Confirm the selecton - the update should start adn reboot the X68000Z after completed - takes less than 2 minutes.
 
 2. Using a HDD Disk Image
+-------------------------
 
 What you need:
  - The System SDCARD (SX-Window) SDCARD that came with the X68000 (The RED one)
@@ -60,11 +70,12 @@ Now the configuration process:
 
 
 3. Using multiple HDD disk images
+---------------------------------
+
 You can use your own HDD disk image by changin pscsi.ini file.
 
 [pscsi]
 ID0=SCSIHDD81M.HDS
-
 
 ID0=<nme of your disk image in the PENDRIVE>
 
