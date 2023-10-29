@@ -1,0 +1,80 @@
+Notes:
+ 1. To download the required packages for the updates described in this guide, you must first register the X68000Z in https://dev.zuiki.com/project-z/community  
+  (My page -> Product Registration)
+ 2. The SCSI configuratioin procedure requires you to navigate the SXWindow graphical user interface. I did it using the X68000Z mouse, and have not even tested if it will work with any USB mouse. I guess if you do not have the X68000Z mouse you have nothign to loose testing with amny USB mouse, right ?
+
+Procedure
+
+1. Firmaware Update to 1.4
+
+What you need:
+ - 1 x SDHC SDCARD format as FAT32
+ - The gamepad controller conected to the X68000Z
+ - The firmaware files (downloaded from Zuiki web site)
+
+Steps:
+- Jump to  https://dev.zuiki.com/project-z/community/resource
+- Download "Body Update Update Data Ver.1.4.0" package
+- Unzip the package adn copy these files to the root of the SD Card
+  - meta
+  - ramesses-mass-bootloader-1.4.0.bin
+  - ramesses-mass-kernel-1.4.0.bin
+- Switch off the X68000Z
+- Insert the SDCARD into X68000Z Slot 1
+- Push and HOLD INTERRUPT down, then switch on the X68000Z
+- Utility screen should appear - you cna now reelase INTERRUPT
+- Using the gamepad controller, navigate to Manual Boot (option 5) and select it
+- Choose Booting Slot should be displayed - note that the SD1 should display "UPDATE" in the Icon if the SD Card is correctly identified
+- Confirm the selecton - the update should start adn reboot the X68000Z after completed - takes less than 2 minutes.
+
+2. Using a HDD Disk Image
+
+What you need:
+ - The System SDCARD (SX-Window) SDCARD that came with the X68000 (The RED one)
+ - 1 x SDHC SDCARD format as FAT32
+ - The gamepad controller conected to the X68000Z (to navigate the menus)
+ - The X68000z mouse (to navigate the SXWindow)
+ - 1 x PENDRIVE formatted as FAT32
+ - The Pseudo-SCSI file packages (downloaded from Zuiki web site)
+ - A HDD disk image (you an use your own, or download  from Zuiki web site)
+
+Steps:
+- Jump to  https://dev.zuiki.com/project-z/community/resource
+- Download The HDD images you want to use with the X68000Z (this image contains both HDD image and pscsi.ini files)
+- Unzip the HDD image and copy to /Z68000Z/ folder in your FAT32-formatted PENDRIVE
+- copy "pscsi.ini" to /Z68000Z/ folder in your FAT32-formatted PENDRIVE
+- Unzip the "Body Update Update Data Ver.1.4.0" (downloaded in "1. Firmaware Update to 1.4" above)
+- copy "bootconf.xdf" FROM "Body Update Update Data Ver.1.4.0" to /X68000Z/ folder in your SDHC SDCARD
+
+Now the configuration process:
+- Inset the System SDCARD (RED SDCARD with SXWindow) into slot 0
+- Insert your SDHD SDCARD with bootconf.xdf into slot 1
+- Plug the PENDRIVE into one fo the back USB connectors
+- Boot the X68000Z and start the Emulator
+- In the OSC screen to select floppy images, select the disk "bootconf.xdf" for slot 1
+- Continue the boot into the emulator and it should boot ito SXWindow
+- Two windows will popup, one for Drive A: and another behind for Drive B:
+- Using the mouse, click the window for Drive B:
+- Run (double click) BOOTSCS0.X - a black screen should popup, and a message "vs.x: press mouse button or key."
+- Restart the X68000Z and boot into the emulator - it should now boot from the HDD disk image.
+
+
+3. Using multiple HDD disk images
+You can use your own HDD disk image by changin pscsi.ini file.
+
+[pscsi]
+ID0=SCSIHDD81M.HDS
+
+
+ID0=<nme of your disk image in the PENDRIVE>
+
+You can settup more than one HDD disk image as below:
+[pscsi]
+ID0=scsi_hdd0.hds
+ID1=scsi_hdd1.hds
+
+Note: The X68000 has a main SCSI ID, which is set (and can be viewed) using switch.x from humanos command line.
+Do not set any of your HDD SCSI IDs to the SCSI ID that is configured in switch.x
+
+
+
