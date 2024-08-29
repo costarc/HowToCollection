@@ -1,0 +1,21 @@
+X68000 - Writing 3.5 inch floppy disks using Linux VM
+
+Writing floppies using Linux is a breeze, even when using a VM (such as a Linux VM running under VirtualBox).
+
+This process is the same as in NFGGames: https://gamesx.com/wiki/doku.php?id=x68000:writing_3.5_floppies
+
+But here, I jump over all the options (which I tried and failed) and go straight to what worked for me, very easily.
+
+1. Install Linux under a VM (or use the real thing if you got a computer running linux already). I recommend Lubuntu, due to smaller footprint compared to other Ubuntu distributions.
+2. Install packages required:
+  sudo apt install ufiformat
+3. Connect the USB floppy drive to the PC. It should be automatically recognized by the Linux VM (probably as device /dev/sdb)
+4. Umount the floppy (because by default, it is mounted when plugged into the PC):
+  sudo umount /dev/sdb
+5. Format the floppy disk
+  sudo ufiformat -f 1232 /dev/sdb
+6. Transfer your XDF images to a local folder in the linux system (use scp, wget, or other means)
+7. Write the XDF image to the floppy disk:
+  sudo dd if=flop.xdf of=/dev/sdb
+
+The floppy is ready to use.
