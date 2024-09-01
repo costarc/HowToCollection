@@ -1,0 +1,9 @@
+HxC Connection Guide
+====================
+
+For MSX:
+
+1. Twisted flat cable is needed for HxC
+2. Facing back of HxC, connect flat Ccable to HxC with red stripe on the left side of the connector
+3. Facing MSX Interface front side, connect flat cable to interface with red stripe on the right side of the connector
+4. HxC Jumpers should be: Top, Down, open, open
