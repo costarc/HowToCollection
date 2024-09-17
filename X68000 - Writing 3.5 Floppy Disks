@@ -1,12 +1,12 @@
-I describe all the steps required to write 3.5 inch floppy disks using a modern PC, first using Windows 11, then using Linux.
+Here I describe all the steps required to write 3.5 inch floppy disks using a modern PC, first using Windows 11, then using Linux.
 
 What you need:
-- Floppy Disk Drive: Sony Model PCGA-UFD5 (USB)
+- Floppy Disk Drive: Sony Model PCGA-UFD5 (USB). Other USB floppys that that has 3mode will also work.
 - DiskImage13b (get it here: https://github.com/costarc/HowToCollection/edit/master/X68000%20-%20Writing%203.5%20Floppy%20Disks/Support Files/DiskImage13b.exe)
 - 3.5" 2HD floppy disk, 1.44MB
-- The disk image in XDF format - other formats, such as D88 and DIM will not work.
+- The disk image in XDF format - in my tests, DIM and D88 images did not work.
+- Formatting the disk prior to writing a new image is not always required - format it if the process fails.
 
-IN this guide, I say to format the floppy before writing a new image. I verified though formatting is not always required, as long as the disk have a valid format already.
 X68000 - Writing 3.5 inch floppy disks in Windows
 =================================================
 
@@ -23,8 +23,8 @@ This guide was developed and tested in Windows 11 - therefore it is verified tha
 When DiskImage finishes writing the disk, the disk is ready to use.
 
 
-X68000 - Writing 3.5 inch floppy disks using Linux VM
-=====================================================
+X68000 - Writing 3.5 inch floppy disks using Linux
+===================================================
 
 Writing floppies using Linux is a breeze, even when using a VM (such as a Linux VM running under VirtualBox).
 
@@ -32,7 +32,7 @@ This process is the same as in NFGGames: https://gamesx.com/wiki/doku.php?id=x68
 
 But here, I jump over all the options (which I tried and failed) and go straight to what worked for me, very easily.
 
-1. Install Linux under a VM (or use the real thing if you got a computer running linux already). I recommend Lubuntu, due to smaller footprint compared to other Ubuntu distributions.
+1. Boot your linux PC, or install in a VM. I recommend Lubuntu, due to smaller footprint compared to other Ubuntu distributions.
 2. Install packages required:
   sudo apt install ufiformat
 3. Connect the USB floppy drive to the PC. It should be automatically recognized by the Linux VM (probably as device /dev/sdb)
