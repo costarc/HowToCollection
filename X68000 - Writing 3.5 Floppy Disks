@@ -12,14 +12,15 @@ X68000 - Writing 3.5 inch floppy disks in Windows
 
 This guide was developed and tested in Windows 11 - therefore it is verified that it supports USB Floppy Disk Drives and can write 3.5 floppy disks for X68000.
 
-* Format the disk. For example, to format a disk from command line: format a: /FS:FAT /V:X68000
-* Run DiskImage13b and choose these options:
-* Windows: Xp/2K
-* FD drive: A:
-* FD Mode: 1.25M
-* HD -> FD (125)
-* Select the disk image
-* When the popup "INSERT Blank_Disk in DRV !!" appear, click OK
+1. Optionally, format the disk. For example, to format a disk from command line: format a: /FS:FAT /V:X68000
+2. Run DiskImage13b and choose these options:
+3. Windows: Xp/2K
+4. FD drive: A:
+5. FD Mode: 1.25M
+6. HD -> FD (125)
+7. Select the disk image
+8. When the popup "INSERT Blank_Disk in DRV !!" appear, click OK
+
 When DiskImage finishes writing the disk, the disk is ready to use.
 
 
