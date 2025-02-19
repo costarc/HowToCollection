@@ -1,0 +1,28 @@
+This process works on Debian (under Windwos WSL2)
+------------------------------------------------
+
+sudo apt update && sudo apt-get upgrade
+sudo apt-get install -y make sdcc binutils wget unzip
+
+cd /Nextor/binutils/linux
+wget https://github.com/Konamiman/Nestor80/releases/download/n80-v1.3.1/N80_1.3.1_FrameworkDependant_linux-x64.zip
+unzip ../N80_1.3.1_FrameworkDependant_linux-x64.zip
+rm N80_1.3.1_FrameworkDependant_linux-x64.zip
+
+wget https://github.com/Konamiman/Nestor80/releases/download/lk80-v1.0/LK80_1.0_FrameworkDependant_linux-x64.zip
+unzip LK80_1.0_FrameworkDependant_linux-x64.zip
+rm LK80_1.0_FrameworkDependant_linux-x64.zip
+
+wget https://github.com/Konamiman/Nestor80/releases/download/lb80-v1.0/LB80_1.0_FrameworkDependant_linux-x64.zip
+unzip LB80_1.0_FrameworkDependant_linux-x64.zip
+rm LB80_1.0_FrameworkDependant_linux-x64.zip
+
+wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0
+
+export PATH=$PATH:/Nextor/buildtools/linux
+cd /Nextor/source/kernel/
+make clean
+make
