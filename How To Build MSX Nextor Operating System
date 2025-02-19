@@ -1,4 +1,4 @@
-This process works on Debian (under Windwos WSL2)
+This process works on Debian (under Windows WSL2)
 ------------------------------------------------
 
 sudo apt update && sudo apt-get upgrade
